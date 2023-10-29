@@ -8,19 +8,19 @@ TOOL.Information = {
     { name = "right" }
 }
 
-if CLIENT then
-    language.Add("tool.magnus_tool.left", "Apply/Update Magnus Effect")
-    language.Add("tool.magnus_tool.right", "Remove Magnus Effect")
-    language.Add("tool.magnus_tool.desc", "Apply the magnus effect to entities!")
-    language.Add("tool.magnus_tool.name", "Magnus Tool")
-end
-
 local function CleanTable(tbl)
     for i = #tbl, 1, -1 do
         if not tbl[i] or not IsValid(tbl[i]) then
             table.remove(tbl, i)
         end
     end
+end
+
+if CLIENT then
+    language.Add("tool.magnus_tool.left", "Apply/Update Magnus Effect")
+    language.Add("tool.magnus_tool.right", "Remove Magnus Effect")
+    language.Add("tool.magnus_tool.desc", "Apply the magnus effect to entities!")
+    language.Add("tool.magnus_tool.name", "Magnus Tool")
 end
 
 function TOOL:Deploy()
