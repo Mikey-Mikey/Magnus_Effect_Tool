@@ -61,7 +61,7 @@ end
 hook.Add("Think", "magnus_tool_physics", function()
     for k, ply in ipairs(player.GetHumans()) do
         if ply.magnus_ents then
-            CleanTable(ply.magnus_ents)
+            CleanTable(ply.magnus_ents) -- This clears the magnus table of invalid entities
             for i, ent in ipairs(ply.magnus_ents) do
                 if not ent.using_magnus then continue end
                 local phys = ent:GetPhysicsObject()
